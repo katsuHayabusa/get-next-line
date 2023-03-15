@@ -6,7 +6,7 @@
 /*   By: saichaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:12:34 by saichaou          #+#    #+#             */
-/*   Updated: 2023/03/15 14:30:25 by saichaou         ###   ########.fr       */
+/*   Updated: 2023/03/15 14:55:24 by saichaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,6 @@ char	*get_next_line(int fd)
 	
 }
 
-/*
 int main(void)
 {
 	int		fd;
@@ -112,4 +111,3 @@ int main(void)
 	char *str = get_next_line(fd);
 	printf("%s", str);
 }
-*/
