@@ -6,7 +6,7 @@
 /*   By: saichaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:12:34 by saichaou          #+#    #+#             */
-/*   Updated: 2023/03/16 15:51:48 by saichaou         ###   ########.fr       */
+/*   Updated: 2023/03/16 16:43:04 by saichaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,14 +109,15 @@ char	*get_next_line(int fd)
 int main(void)
 {
 	int		fd;
-	int		fd2;
 
 	fd = open("mam", O_RDONLY);
-	fd2 = open("dad", O_RDONLY);
 	char *str = get_next_line(fd);
 	printf("%s", str);
 	free(str);
-	str = get_next_line(fd2);
+	str = get_next_line(fd);
+	printf("%s", str);
+	free(str);
+	str = get_next_line(fd);
 	printf("%s", str);
 	free(str);
 }
