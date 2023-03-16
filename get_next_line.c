@@ -6,7 +6,7 @@
 /*   By: saichaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:12:34 by saichaou          #+#    #+#             */
-/*   Updated: 2023/03/15 14:55:24 by saichaou         ###   ########.fr       */
+/*   Updated: 2023/03/16 15:51:48 by saichaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char	*trim_stash(char *stash)
 		j++;
 	}
 	res[j] = '\0';
-	return (free(stash), res);
+	return (res);
 }
 
 char	*get_line(char *stash)
@@ -87,18 +87,21 @@ char	*get_line(char *stash)
 
 char	*get_next_line(int fd)
 {
-	static char	*stash;
-	char		*line;
+	char			*stash;
+	char			*line;
+	static char		*trimmed;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
+	stash = trimmed;
 	stash = get_stash(fd, stash);
 	if (!stash)
 		return (NULL);
 	line = get_line(stash);
+	trimmed = trim_stash(stash);
 	if (!line)
 		return (free(stash), NULL);
-	stash = trim_stash(stash);
+	free(stash);
 	return (line);
 	
 }
@@ -106,8 +109,14 @@ char	*get_next_line(int fd)
 int main(void)
 {
 	int		fd;
+	int		fd2;
 
 	fd = open("mam", O_RDONLY);
+	fd2 = open("dad", O_RDONLY);
 	char *str = get_next_line(fd);
 	printf("%s", str);
+	free(str);
+	str = get_next_line(fd2);
+	printf("%s", str);
+	free(str);
 }

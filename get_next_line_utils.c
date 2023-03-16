@@ -6,7 +6,7 @@
 /*   By: saichaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:17:17 by saichaou          #+#    #+#             */
-/*   Updated: 2023/03/15 15:11:42 by saichaou         ###   ########.fr       */
+/*   Updated: 2023/03/16 15:27:49 by saichaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	*strjoin(char *stash, char *buf)
 	int		j;
 
 	if (!buf)
-		return (NULL);
+		return (stash);
 	i = 0;
 	j = -1;
 	res = malloc((ft_strlen(stash) + ft_strlen(buf) + 1) * sizeof(char));
