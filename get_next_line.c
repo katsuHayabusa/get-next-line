@@ -6,7 +6,7 @@
 /*   By: saichaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:12:34 by saichaou          #+#    #+#             */
-/*   Updated: 2023/03/16 16:43:04 by saichaou         ###   ########.fr       */
+/*   Updated: 2023/03/17 12:09:53 by saichaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,21 +103,23 @@ char	*get_next_line(int fd)
 		return (free(stash), NULL);
 	free(stash);
 	return (line);
-	
 }
 
+/*
 int main(void)
 {
 	int		fd;
+	char	*str;
 
 	fd = open("mam", O_RDONLY);
-	char *str = get_next_line(fd);
-	printf("%s", str);
-	free(str);
 	str = get_next_line(fd);
-	printf("%s", str);
+	while (str)
+	{
+		printf("%s", str);
+		free(str);
+		str = get_next_line(fd);
+	}
 	free(str);
-	str = get_next_line(fd);
-	printf("%s", str);
-	free(str);
+	return (0);
 }
+*/

@@ -6,7 +6,7 @@
 /*   By: saichaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:37:32 by saichaou          #+#    #+#             */
-/*   Updated: 2023/03/15 14:24:12 by saichaou         ###   ########.fr       */
+/*   Updated: 2023/03/17 12:12:09 by saichaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdlib.h>
-# include <stdio.h>
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE	5
+#  define BUFFER_SIZE 5
 # endif
 
 char	*get_next_line(int fd);
